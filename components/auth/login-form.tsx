@@ -13,6 +13,7 @@ import React, { useState, useTransition } from "react";
 import { FormSuccess } from "@/components/form-success";
 import CardWrapper from "@/components/auth/card-wrapper";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import Link from "next/link";
 
 const LoginForm = () => {
   const searchParams = useSearchParams();
@@ -67,6 +68,9 @@ const LoginForm = () => {
                   <FormControl>
                     <Input disabled={isPending} {...field} name="password" placeholder="******" />
                   </FormControl>
+                  <Button size={"sm"} variant={"link"} asChild className="px-0 font-normal">
+                    <Link href={"/auth/reset"}>Forgot password?</Link>
+                  </Button>
                   <FormMessage />
                 </FormItem>
               )}
